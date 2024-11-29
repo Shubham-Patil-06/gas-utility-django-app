@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: gas-utility-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn gas_utility.wsgi:application"

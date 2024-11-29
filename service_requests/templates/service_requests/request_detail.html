@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Request Details</h1>
+<p><strong>Type:</strong> {{ service_request.request_type }}</p>
+<p><strong>Status:</strong> {{ service_request.status }}</p>
+<p><strong>Description:</strong> {{ service_request.description }}</p>
+<p><strong>Attachment:</strong> 
+    {% if service_request.attachment %}
+        <a href="{{ service_request.attachment.url }}">Download</a>
+    {% else %}
+        None
+    {% endif %}
+</p>
+
+<h2>Logs</h2>
+<ul>
+    {% for log in logs %}
+    <li>{{ log.timestamp }} - {{ log.status }} ({{ log.updated_by }})</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

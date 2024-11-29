@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My Service Requests</h1>
+<a href="{% url 'create_request' %}" class="btn btn-primary">Submit New Request</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Submitted At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.id }}</td>
+            <td>{{ request.request_type }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.created_at }}</td>
+            <td><a href="{% url 'request_detail' request.id %}">View</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
