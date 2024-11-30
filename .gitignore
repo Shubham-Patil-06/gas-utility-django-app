@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 *.pyc
 __pycache__/
 db.sqlite3
 /media/
 .env
 *.log
+=======
+*.pyc
+__pycache__/
+db.sqlite3
+/media/
+.env
+*.log
+>>>>>>> be221a8f2c8fa1658bb085b374c984ecce33add6
