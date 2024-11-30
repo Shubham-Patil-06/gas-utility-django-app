@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
+{% block title %}Dashboard{% endblock %}
+
 {% block content %}
 <h1>My Service Requests</h1>
-<a href="{% url 'create_request' %}" class="btn btn-primary">Submit New Request</a>
-<table>
+<a href="{% url 'create_request' %}" class="btn btn-primary mb-3">Submit New Request</a>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
@@ -20,7 +22,7 @@
             <td>{{ request.request_type }}</td>
             <td>{{ request.status }}</td>
             <td>{{ request.created_at }}</td>
-            <td><a href="{% url 'request_detail' request.id %}">View</a></td>
+            <td><a href="{% url 'request_detail' request.id %}" class="btn btn-sm btn-info">View</a></td>
         </tr>
         {% endfor %}
     </tbody>
