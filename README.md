@@ -64,7 +64,9 @@ A Django-based web application designed to manage customer service requests for 
 - Django 4.x  
 - PostgreSQL (optional)  
 - Git  
-
+### ID and Password
+- ID gas-utility
+- pass gas-utility
 ### Steps  
 1. Clone this repository:  
    ```bash  
